@@ -1,0 +1,42 @@
+@use "../../styles/index" as *;
+
+.chip {
+  display: flex;
+  justify-self: start;
+  align-self: flex-start;
+  gap: 3.5px;
+  padding: 4px 7px;
+  font-size: 10.5px;
+  border-radius: 7px;
+
+  &-secondary {
+    background-color: $badge-color-secondary;
+    color: $badge-text-color-secondary;
+  }
+
+  &-info {
+    background-color: $badge-color-info;
+    color: $badge-text-color-info;
+  }
+
+  &-warning {
+    background-color: $badge-color-warning;
+    color: $badge-text-color-warning;
+  }
+
+  &-rounded {
+    border-radius: 100px;
+  }
+
+  &-line {
+    padding: 0;
+    background: none;
+    border: none;
+    color: $text-color-secondary; // или любой нужный
+    font-size: 12.3px;
+
+    ::before {
+      content: "#";
+    }
+  }
+}

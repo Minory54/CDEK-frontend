@@ -1,0 +1,8 @@
+@use "../../styles/index" as *;
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: $divider-color;
+  margin: 16px 0;
+}

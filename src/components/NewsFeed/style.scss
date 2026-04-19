@@ -1,0 +1,32 @@
+@use "../../styles/index" as *;
+
+.news-feed {
+  width: 100%;
+  background-color: $background-surface-section-color;
+  padding: 21px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #0000000a;
+
+  &__content,
+  &__titles {
+    @include flex-column;
+    gap: 7px;
+  }
+
+  &__cards {
+    @include flex-column;
+    gap: 14px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: right;
+    margin-top: 21px;
+  }
+
+  &__empty {
+    @include flex-column-center;
+    gap: 7px;
+    font-weight: bold;
+  }
+}

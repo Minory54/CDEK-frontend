@@ -1,0 +1,23 @@
+@use "../../styles/index" as *;
+
+.text-title {
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.text-caption {
+  color: $text-color-secondary;
+  font-size: 12.25px;
+  line-height: 15px;
+}
+
+.text-body {
+  font-size: 15.75px;
+  line-height: 23.6px;
+
+  &-base {
+    font-size: 14px;
+    line-height: 21px;
+    color: $text-color-secondary;
+  }
+}
