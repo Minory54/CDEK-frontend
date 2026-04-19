@@ -12,7 +12,11 @@ export const fetchNews = async ({
   page = 1,
   perPage = 3,
 }: fetchNewsParams): Promise<NewsResponse> => {
-  const url = `${NEWS_API_URL}/${endpoint}?page=${page}&perPage=${perPage}`;
+  const normalizedEndpoint = endpoint.startsWith("/")
+    ? endpoint.slice(1)
+    : endpoint;
+
+  const url = `${NEWS_API_URL}/${normalizedEndpoint}?page=${page}&perPage=${perPage}`;
 
   try {
     const response = await fetch(url);
