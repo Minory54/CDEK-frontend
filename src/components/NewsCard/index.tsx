@@ -16,8 +16,13 @@ const buildAssetUrl = (assetPath?: string) => {
 
   if (/^https?:\/\//i.test(assetPath)) return assetPath;
 
-  const origin = new URL(import.meta.env.VITE_API_URL).origin;
-  return `${origin}/${assetPath.replace(/^\/+/, "")}`;
+  const normalized = assetPath.replace(/^\/+/, "");
+
+  if (normalized.startsWith("assets/")) {
+    return `${window.location.origin}/${normalized}`;
+  }
+
+  return `${window.location.origin}/assets/${normalized}`;
 };
 
 export const NewsCard = ({
